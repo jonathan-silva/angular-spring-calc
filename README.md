@@ -60,4 +60,6 @@ o mongo express.
 2. Mongo Express acessivel via => **localhost:8081** via browser.
    Será necessario fornecer autenticação, que estão nas variaveis **ME_CONFIG_BASICAUTH_USERNAME**, e **ME_CONFIG_BASICAUTH_PASSWORD**.
 
+É necessario criar um database chamado **desafio-calc** antes de efetuar qualquer teste.
+
 Att.
