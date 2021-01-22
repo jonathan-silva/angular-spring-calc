@@ -57,7 +57,7 @@ No diretório raiz da aplicação contem um arquivo chamado **mongo-compose.yml*
 o mongo express.
 
 1. MongoDB acessivel via => **localhost:27017**
-2. Mongo Express acessivel via => **localhost:8081** via browser
+2. Mongo Express acessivel via => **localhost:8081** via browser.
    Será necessario fornecer autenticação, que estão nas variaveis **ME_CONFIG_BASICAUTH_USERNAME**, e **ME_CONFIG_BASICAUTH_PASSWORD**.
 
 Att.
