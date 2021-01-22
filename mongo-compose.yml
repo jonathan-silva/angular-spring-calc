@@ -1,0 +1,37 @@
+version: "3"
+
+x-common-variables: &common-variables
+  ME_CONFIG_BASICAUTH_USERNAME: jonathan.costa
+  ME_CONFIG_BASICAUTH_PASSWORD: "123456"
+  ME_CONFIG_MONGODB_PORT: 27017
+  ME_CONFIG_MONGODB_ADMINUSERNAME: root
+  ME_CONFIG_MONGODB_ADMINPASSWORD: "123456789"
+  MONGO_INITDB_ROOT_USERNAME: root
+  MONGO_INITDB_ROOT_PASSWORD: "123456789"
+
+services:
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      <<: *common-variables
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+
+  mongo:
+    image: mongo
+    environment:
+      <<: *common-variables
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./desafio-calc-mongo:/data/db
+    networks:
+      - mongo-compose-network
+
+networks:
+  mongo-compose-network:
+    driver: bridge
