@@ -1,0 +1,30 @@
+<div fxFlex="100" fxLayout="column">
+  <form [formGroup]="pessoaForm">
+    <div>
+      <mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          formControlName="nm_pessoa"
+          placeholder="Digite o nome da pessoa"
+        />
+        <mat-error>Por favor, informe um nome.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayoutAlign="center center">
+      <button
+        class="save-button mat-primary"
+        mat-raised-button
+        aria-label="CONSULTAR"
+        fxFlex="30"
+        fxFlex.xs="100"
+        fxFlex.sm="50"
+        [disabled]="pessoaForm.invalid"
+        (click)="saveForm()"
+      >
+        <mat-icon>save</mat-icon>
+        SALVAR
+      </button>
+    </div>
+  </form>
+</div>

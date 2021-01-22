@@ -1,0 +1,16 @@
+<div fxLayout="column">
+  <span fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center">
+    <h1>Cadastro de Pessoas</h1>
+  </span>
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="70" fxFlex.xs="100" [@animateStagger]="{ value: '50' }">
+      <app-pessoa-form></app-pessoa-form>
+    </mat-card>
+  </div>
+  <p></p>
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <mat-card fxFlex="70" fxFlex.xs="100" [@animateStagger]="{ value: '50' }">
+      <app-pessoa-list></app-pessoa-list>
+    </mat-card>
+  </div>
+</div>

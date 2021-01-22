@@ -1,0 +1,84 @@
+<div *ngIf="pessoas.length > 0">
+  <div fxLayout="column" fxFlex="100">
+    <mat-table
+      #table
+      [dataSource]="pessoas"
+      [@animateStagger]="{ value: '50' }"
+      multiTemplateDataRows
+      fxFlex="100"
+    >
+      <!-- ! id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell
+          fxLayoutAlign="center center"
+          fxFlex="100"
+          *matHeaderCellDef
+          >COD
+        </mat-header-cell>
+        <mat-cell *matCellDef="let pessoa" fxLayoutAlign="center center">
+          <p class="id">
+            {{ pessoa.id }}
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <!-- ! nm_pessoa Column -->
+      <ng-container matColumnDef="nm_pessoa">
+        <mat-header-cell
+          fxLayoutAlign="center center"
+          fxFlex="100"
+          *matHeaderCellDef
+          >Nome Pessoa
+        </mat-header-cell>
+        <mat-cell *matCellDef="let pessoa" fxLayoutAlign="center center">
+          <p class="nm_pessoa text-truncate">
+            {{ pessoa.nm_pessoa }}
+          </p>
+        </mat-cell>
+      </ng-container>
+
+      <!-- ! buttons Column -->
+      <ng-container matColumnDef="buttons">
+        <mat-header-cell
+          *matHeaderCellDef
+          fxFlex="30"
+          fxFlex.xs="30"
+          fxLayoutAlign="end center"
+          >Ações</mat-header-cell
+        >
+        <mat-cell *matCellDef="let pessoa" fxFlex="30" fxFlex.xs="30">
+          <div fxFlex="row" fxLayoutAlign="end center">
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="moreMenu"
+              aria-label="More"
+            >
+              <mat-icon class="secondary-text">more_vert</mat-icon>
+            </button>
+            <mat-menu #moreMenu="matMenu">
+              <button
+                mat-menu-item
+                aria-label="EXCLUIR"
+                (click)="excluirPessoa(pessoa)"
+              >
+                <mat-icon color="warn">delete</mat-icon>
+                <span>Excluir</span>
+              </button>
+            </mat-menu>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row
+        *matRowDef="let pessoa; columns: displayedColumns"
+        class="pessoa"
+        [@animate]="{ value: '*', params: { y: '100%' } }"
+      >
+      </mat-row>
+    </mat-table>
+  </div>
+</div>
+<div fxLayoutAlign="center center" *ngIf="pessoas.length === 0">
+  <h1>{{ msgListaVaziaPessoa }}</h1>
+</div>
