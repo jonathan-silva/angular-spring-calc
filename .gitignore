@@ -1,2 +1,4 @@
 desafio-calc-mongo
 desafio-calc-mongo/*
+backend/target/*
+frontend/node_modules/*
