@@ -51,6 +51,9 @@ spring.data.mongodb.uri=${URI_MONGODB}
 
 Será necessario definir a variavel **URI_MONGO** e **APP_PORT**.
 
+Também contém o swagger da API da aplicação, apenas acessar o endereço.
+**http://localhost:8080/desafio-calc/swagger-ui.html#/** ou pelo contexto do proxy reverso **api/swagger-ui.html#/**.
+
 ## Mongo e MongoExpress
 
 No diretório raiz da aplicação contem um arquivo chamado **mongo-compose.yml**, que o mesmo já levanta o mongo, e
