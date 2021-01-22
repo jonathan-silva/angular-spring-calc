@@ -56,6 +56,12 @@ Será necessario definir a variavel **URI_MONGO** e **APP_PORT**.
 No diretório raiz da aplicação contem um arquivo chamado **mongo-compose.yml**, que o mesmo já levanta o mongo, e
 o mongo express.
 
+Rode o comando para subir os container:
+
+```
+docker-compose -f mongo-compose.yml up -d --build
+```
+
 1. MongoDB acessivel via => **localhost:27017**
 2. Mongo Express acessivel via => **localhost:8081** via browser.
    Será necessario fornecer autenticação, que estão nas variaveis **ME_CONFIG_BASICAUTH_USERNAME**, e **ME_CONFIG_BASICAUTH_PASSWORD**.
